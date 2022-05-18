@@ -1,0 +1,212 @@
+local Cursor = {}
+
+
+
+
+-- RBX Classic Cursors Module by Splatert Dev (Spl4t3rt) --
+
+
+-- The table below shows the names and IDs to the cursors.
+
+
+-- To use in your project, Enter Require(Path to script), then set cursor by calling Cursor:Set(Mouse, Cursor Name)
+
+
+-- Where "Mouse" is your mouse instance and "Cursor Name" and is the name of the cursor from the list.
+
+
+
+
+local cursors = {
+
+
+	["arrow"] = 7242394275,
+
+
+	["arrow2"] = 4571109461,
+
+
+	["arrow_decal"] = 123962018,
+
+
+	["finger"] = 601968777,
+
+
+	["dropper"] = 31727891,
+
+
+	["fill"] = "FillCursor",
+
+
+	["flag"] = 23445072,
+
+
+	["spawn"] = 31728037,
+
+
+	["hinge"] = 23445092,
+
+
+	["flat"] = "FlatCursor",
+
+
+	["grab"] = 5780155214,
+
+
+	["rotate"] = 6336907154,
+
+
+	["gun"] = 1188113568,
+
+
+	["reload"] = 1188114044,
+
+
+	["hammer"] = 5780158827,
+
+
+	["hammer_down"] = 6336913512,
+
+
+	["hammer2"] = 5780160312,
+
+
+	["lock"] = 94268861,
+
+
+	["unlock"] = 70284371,
+
+
+	["material"] = 850303105,
+
+
+	["missing"] = "MissingCursor",
+
+
+	["anchor"] = 891345546,
+
+
+	["unanchor"] = "UnAnchorCursor",
+
+
+	["weld"] = 46342756,
+
+
+	["clone"] = 5780144836,
+
+
+	["clone_down"] = 5780144513,
+
+
+	["clone2"] = 5780145675,
+
+
+	
+
+
+	
+
+
+}
+
+
+
+
+function Cursor:Set(mouse, cursor)
+
+
+	
+
+
+	if cursors[cursor] then
+
+
+		
+
+
+		if mouse then
+
+
+			if tonumber(cursors[cursor]) then
+
+
+				mouse.Icon = "rbxassetid://" ..cursors[cursor]
+
+
+			else
+
+
+				mouse.Icon = "rbxasset://textures/" ..cursors[cursor] ..".png"
+
+
+			end
+
+
+		end
+
+
+		
+
+
+	else
+
+
+		
+
+
+		warn("[ Cursors ]")
+
+
+		
+
+
+		for k, v in pairs(cursors) do
+
+
+			print("> " ..k)
+
+
+		end
+
+
+		
+
+
+		warn("[RBXClassicCursors] Could not find cursor. Check if cursor name is correct from the list above.")
+
+
+		
+
+
+	end
+
+
+	
+
+
+end
+
+
+
+
+
+function Cursor:Unset(mouse)
+
+
+	if mouse then
+
+
+		mouse.Icon = ""
+
+
+	end
+
+
+end
+
+
+
+
+return Cursor
+
+
