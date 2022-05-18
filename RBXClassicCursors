@@ -26,7 +26,7 @@ local cursors = {
 	["arrow2"] = 4571109461,
 
 
-	["arrow_decal"] = 123962018,
+	["arrow_decal"] = "ArrowCursorDecalDrag",
 
 
 	["finger"] = 601968777,
@@ -56,10 +56,10 @@ local cursors = {
 	["rotate"] = 6336907154,
 
 
-	["gun"] = 1188113568,
+	["gun"] = "GunCursor",
 
 
-	["reload"] = 1188114044,
+	["reload"] = "GunWaitCursor",
 
 
 	["hammer"] = 5780158827,
@@ -71,10 +71,10 @@ local cursors = {
 	["hammer2"] = 5780160312,
 
 
-	["lock"] = 94268861,
+	["lock"] = "LockCursor",
 
 
-	["unlock"] = 70284371,
+	["unlock"] = "UnlockCursor",
 
 
 	["material"] = 850303105,
@@ -89,7 +89,7 @@ local cursors = {
 	["unanchor"] = "UnAnchorCursor",
 
 
-	["weld"] = 46342756,
+	["weld"] = "WeldCursor",
 
 
 	["clone"] = 5780144836,
@@ -182,6 +182,30 @@ function Cursor:Set(mouse, cursor)
 
 
 	
+
+
+end
+
+
+
+
+
+function Cursor:Testmode(mouse)
+
+
+	for k, v in pairs(cursors) do
+
+
+		Cursor:Set(mouse, k)
+
+
+		wait(1)
+
+
+	end
+
+
+	Cursor:Unset(mouse)
 
 
 end
